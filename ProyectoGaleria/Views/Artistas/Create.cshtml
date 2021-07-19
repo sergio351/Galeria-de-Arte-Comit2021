@@ -1,0 +1,79 @@
+﻿@model ProyectoGaleria.Models.Artista
+@{
+    ViewData["Title"] = "Crear Nuevo Artista";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    
+    <div class="row">
+        <div class="col-sm-12">
+            <h3>Agregar Artista</h3>
+        
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-sm-10">
+            <form method="post" enctype="multipart/form-data" asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Nombre" class="control-label"></label>
+                    <input asp-for="Nombre" class="form-control" />
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Apellido" class="control-label"></label>
+                    <input asp-for="Apellido" class="form-control" />
+                    <span asp-validation-for="Apellido" class="text-danger"></span>
+
+                </div>
+                <div class="form-group">
+                    <label asp-for="Obra" class="control-label"></label>
+                    <input asp-for="Obra" class="form-control" />
+                    <span asp-validation-for="Obra" class="text-danger"></span>
+
+                </div>
+                <div class="form-group">
+                    <label asp-for="Fechacreacion" class="control-label"></label>
+                    <input asp-for="Fechacreacion" class="form-control" />
+                    <span asp-validation-for="Fechacreacion" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Precio" class="control-label"></label>
+                    <input asp-for="Precio" class="form-control" />
+                    <span asp-validation-for="Precio" class="text-danger"></span>
+
+                </div>
+                <div class="form-group">
+                    <label asp-for="Imagen" class="control-label"></label>
+
+                    <input type="file" accept=".png,.jpg,.jpeg" asp-for="Imagen" class="form-control" id="customFile" name="subir"
+                           style="border:0px !important;padding:0px;padding-top:10px;padding-bottom:30px;"
+                           onchange="document.getElementById('imagen').src = window.URL.createObjectURL(this.files[0])" />
+
+                    <span asp-validation-for="Imagen" class="text-danger"></span>
+
+                </div>
+                <div class="form-group">
+                    <label asp-for="ImgPerfil" class="control-label"></label>
+
+                    <input type="file" accept=".png,.jpg,.jpeg" asp-for="ImgPerfil" class="form-control" id="customFile" name="subir"
+                           style="border:0px !important;padding:0px;padding-top:10px;padding-bottom:30px;"
+                           onchange="document.getElementById('imgperfil').src = window.URL.createObjectURL(this.files[0])" />
+
+                    <span asp-validation-for="ImgPerfil" class="text-danger"></span>
+
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Agregar Artista" class="btn btn-primary" />
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    @{<partial name="_ValidationScriptsPartial" />}
+}

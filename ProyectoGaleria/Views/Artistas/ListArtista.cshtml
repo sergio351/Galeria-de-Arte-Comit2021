@@ -1,0 +1,34 @@
+﻿@model IEnumerable<ProyectoGaleria.Models.Artista>
+@{
+    ViewData["Title"] = "Lista de Artistas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<section id="gallery">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 mb-4">
+                    <div class="text-center">
+                        @if (item.ImgPerfil != null)
+                        {
+
+                            <img style="border-radius: 50%; width: 250px ;height:250px ;" id="imagenArtista" src="data:image/*;base64,@(Convert.ToBase64String(item.ImgPerfil))">
+                            <a asp-action="ListObra" asp-controller="Artistas" class="list-group-item list-group-item-action list-group-item-dark"> @item.Apellido</a>
+                        }
+                        else
+                        {
+                            <img id="imagenArtista" style="width:350px;height:350px; object-fit:cover" src="">
+                        }
+                        
+                       
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</section>

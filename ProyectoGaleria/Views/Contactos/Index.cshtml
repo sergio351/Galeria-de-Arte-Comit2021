@@ -1,0 +1,28 @@
+﻿@model IEnumerable<ProyectoGaleria.Models.Contacto>
+@{ ViewData["Title"] = "Contacto";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="~/css/contacto.css" rel="stylesheet">
+</head>
+<body>
+    <div id="fuente">
+
+        <h1>Contacto</h1>
+        <p>Telefono: + 0223 234 567 88    </p>
+        <p>Direccion: Los Arces 1234, Mar del Plata    </p>
+        <p>Email: infogaleriadearte@gmail.com   </p>
+        <p>
+            <a class="font-weight-bolder" asp-action="Create">Hacé tu Consulta</a>
+        </p>
+    </div>
+
+</body>
+
+</html>
+
+<img style="border-radius: 50%; width: 300px ;height:300px ;" src="~/img/52740.jpg" alt="..." class="img-circle">

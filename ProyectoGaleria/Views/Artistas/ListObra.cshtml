@@ -1,0 +1,50 @@
+﻿@model IEnumerable<ProyectoGaleria.Models.Artista>
+
+@{
+    ViewData["Title"] = "ListObra";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Listas de Obras</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Obra)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tipo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Precio)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+
+
+            @if (item.Obra != null) 
+            { 
+                <tr>
+
+                    
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tipo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Precio)
+                    </td>
+
+                </tr>
+            }
+
+        }
+        </tbody>
+</table>

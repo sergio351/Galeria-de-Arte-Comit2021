@@ -1,0 +1,57 @@
+﻿    #galeria col-lg-4 {
+    margin: 0;
+    padding: 25px;
+    
+    
+    }
+
+    #galeria img {
+    width: 100%;
+    height: 250px;
+    }
+
+    #galeria img:hover {
+        border: 5px solid #e5e5e5;
+        
+    }
+
+    #container{
+    width:20%;
+    height:20%;
+    }
+    #logo{
+    width:60px;
+    height:60px;
+    }
+    .carousel-inner {
+    height: 350px;
+    }
+    .carousel-inner img{
+        height:300px;
+    }
+    .header.nav {
+        width: 100%;
+    }
+    #bienvenidos{
+        font-size:50px;
+        font-family:'MingLiU_HKSCS-ExtB';
+       
+    }
+    #bienvenidos2{
+        font-size:25px;
+    }
+
+    #fuentenav {
+        font-family:'Century Gothic';
+        font-weight:bold;
+        
+    }
+#header{
+    color:red;
+    font-size:large;
+    
+}
+.navbar-nav.li {
+    float: none;
+    display: inline-block;
+}
