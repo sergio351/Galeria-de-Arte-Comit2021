@@ -4,10 +4,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
+<h1>Lista de Artistas</h1>
 
 <section id="gallery">
     <div class="container">
+        <form asp-action="Buscar" class="form-inline my-1 my-lg-0">
+            <input name="filtroapellido" class="form-control mr-sm-1" type="search" placeholder="Buscar por Apellido" aria-label="Search">
+            <button class="btn btn-outline-success my-1 my-sm-0 text-dark" type="submit">Buscar</button>
+        </form>
         <div class="row">
             @foreach (var item in Model)
             {
@@ -17,14 +21,14 @@
                         {
 
                             <img style="border-radius: 50%; width: 250px ;height:250px ;" id="imagenArtista" src="data:image/*;base64,@(Convert.ToBase64String(item.ImgPerfil))">
-                            <a asp-action="ListObra" asp-controller="Artistas" class="list-group-item list-group-item-action list-group-item-dark"> @item.Apellido</a>
+                            <a name="filtroObra" asp-action="ListObra" asp-route-id="@item.Id"   asp-controller="Artistas" class="list-group-item list-group-item-action list-group-item-dark"> @item.Apellido</a>
                         }
                         else
                         {
-                            <img id="imagenArtista" style="width:350px;height:350px; object-fit:cover" src="">
+                            <img id="imagenArtista" style="width:350px;height:350px; object-fit:cover">
                         }
-                        
-                       
+
+
                     </div>
                 </div>
             }

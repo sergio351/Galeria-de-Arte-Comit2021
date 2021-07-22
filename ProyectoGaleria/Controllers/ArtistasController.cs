@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Documents;
+using Microsoft.EntityFrameworkCore;
 using ProyectoGaleria.Data;
 using ProyectoGaleria.Models;
 using System;
@@ -17,12 +18,12 @@ namespace ProyectoGaleria.Controllers
     [Authorize]
     public class ArtistasController : Controller
     {
-      
+
         private readonly ApplicationDbContext _context;
         private readonly IWebHostEnvironment _webHostEnvironment;
-        
+
         public ArtistasController(ApplicationDbContext context, IWebHostEnvironment webHostEnvironment)
-          
+
         {
             _context = context;
             _webHostEnvironment = webHostEnvironment;
@@ -38,7 +39,7 @@ namespace ProyectoGaleria.Controllers
         //http get create
         public IActionResult Create()
         {
-            
+
             return View();
         }
         //http post create( transferencia de información y datos)
@@ -49,20 +50,21 @@ namespace ProyectoGaleria.Controllers
             if (ModelState.IsValid)
             {
                 //agregar imagenes
-                if (Request.Form.Files.Count>0)
+                if (Request.Form.Files.Count > 0)
                 {
-                    IFormFile file = Request.Form.Files.FirstOrDefault();
+                    IFormFile file = Request.Form.Files[0];
                     using (var dataStream = new MemoryStream())
                     {
                         await file.CopyToAsync(dataStream);
                         artista.Imagen = dataStream.ToArray();
                     }
-                        
+
                 }
+
                 //agregar imagen perfil
                 if (Request.Form.Files.Count > 0)
                 {
-                    IFormFile file = Request.Form.Files.FirstOrDefault();
+                    IFormFile file = Request.Form.Files[1];
                     using (var dataStream = new MemoryStream())
                     {
                         await file.CopyToAsync(dataStream);
@@ -143,16 +145,22 @@ namespace ProyectoGaleria.Controllers
             return RedirectToAction("Index");
         }
 
-       
+
         public IActionResult ListArtista()
         {
             IEnumerable<Artista> listArtistas = _context.Artista;
             return View(listArtistas);
         }
-        public IActionResult ListObra()
+        public async Task <IActionResult> ListObra(int id)
         {
             IEnumerable<Artista> listArtistas = _context.Artista;
-            return View(listArtistas);
+            return View("ListObra", await _context.Artista.Where(a => a.Id == id).ToListAsync());
+        }
+
+        public async Task <IActionResult> Buscar(string filtroapellido)
+        {
+            return View("Index",await _context.Artista.Where(a =>a.Apellido.Contains(filtroapellido)).ToListAsync());
+            
         }
     }
 

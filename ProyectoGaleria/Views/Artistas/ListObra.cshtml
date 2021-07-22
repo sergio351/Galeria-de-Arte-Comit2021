@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<ProyectoGaleria.Models.Artista>
 
 @{
-    ViewData["Title"] = "ListObra";
+    ViewData["Title"] = "Listas de Obras";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -28,23 +28,20 @@
     <tbody>
         @foreach (var item in Model)
         {
+        <tr>
 
+            <td>
+                @item.Obra
+            </td>
+            <td>
+               @item.Tipo
+            </td>
+            <td>
+                @item.Precio
+            </td>
 
-            @if (item.Obra != null) 
-            { 
-                <tr>
-
-                    
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Tipo)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Precio)
-                    </td>
-
-                </tr>
-            }
-
+        </tr>
+            
         }
         </tbody>
 </table>

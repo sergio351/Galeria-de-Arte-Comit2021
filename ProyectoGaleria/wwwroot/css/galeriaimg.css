@@ -1,4 +1,7 @@
-﻿    #galeria col-lg-4 {
+﻿* {
+    background-color: red;
+}   
+#galeria col-lg-4 {
     margin: 0;
     padding: 25px;
     

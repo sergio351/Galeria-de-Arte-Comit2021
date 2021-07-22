@@ -13,7 +13,7 @@
 <body>
     <!--Navbar-->
     <header id="header" >
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3 w-100 justify-content-between"  style="background-color: rgb(0,0,0);">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3 w-100 justify-content-between fixed-top"  style="background-color: rgb(0,0,0);">
             <div class="nav navbar-expand-lg navbar-light font-weight-bolder w-100">
                 <a  class="navbar-brand text-light" asp-area="" asp-controller="Home" asp-action="Index">
                     Galeria de Arte
@@ -41,10 +41,7 @@
                         </li>
                       
                     </ul>
-                    <form class="form-inline my-1 my-lg-0">
-                        <input class="form-control mr-sm-1" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success my-1 my-sm-0 text-light" type="submit">Buscar</button>
-                    </form>
+                   
                     <partial name="_LoginPartial" />
                 </div>
             </div>
@@ -127,20 +124,18 @@
                     <!-- Grid column -->
                     <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                         <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4">
-                            Useful links
-                        </h6>
-                        <p>
-                            <a href="#!" class="text-reset">Pricing</a>
+                        <h6 class="text-uppercase fw-bold mb-4">Formas de Pago</h6>
+                        <p>                                                       
+                          <img src="~/img/footer/visa-logo-7.png" alt="" width="50" height="30">                       
                         </p>
                         <p>
-                            <a href="#!" class="text-reset">Settings</a>
+                          <img src="~/img/footer/2560px-MasterCard_Logo.svg.png" alt="" width="50" height="30">
                         </p>
                         <p>
-                            <a href="#!" class="text-reset">Orders</a>
+                            <img src="~/img/footer/mercadopago-nuevo-logo-12208FF614-seeklogo.com.png" alt="" width="50" height="30">
                         </p>
                         <p>
-                            <a href="#!" class="text-reset">Help</a>
+                            <img src="~/img/footer/pagofacilpng.png" alt="" width="50" height="30">
                         </p>
                     </div>
                     <!-- Grid column -->
@@ -167,7 +162,7 @@
         <!-- Copyright -->
         <div class="text-center p-4" style="background-color: rgb(255 255 255);">
             © 2021 Copyright:
-            <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+            <a class="text-reset fw-bold" href="https://www.linkedin.com/in/sergio-velazquez-855186165/">Sergio Velazquez Company</a>
         </div>
         <!-- Copyright -->
     </footer>
