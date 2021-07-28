@@ -6,21 +6,26 @@
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    
     <link href="~/css/contacto.css" rel="stylesheet">
 </head>
-<body>
-    <div id="fuente">
-
-        <h1>Contacto</h1>
-        <p>Telefono: + 0223 234 567 88    </p>
-        <p>Direccion: Los Arces 1234, Mar del Plata    </p>
-        <p>Email: infogaleriadearte@gmail.com   </p>
+<body class="contacto">
+    <div class="container">
+        
+        <div class="textoimg">
+            <h1>
+                Contacto
+                <img src="~/img/logo.png" alt="" width="45" height="40">
+            </h1>
+            <h4>Telefono: + 0223 234 567 88    </h4>
+            <h4>Direccion: Los Arces 1234, Mar del Plata    </h4>
+            <h4>Email: infogaleriadearte@gmail.com </h4>
+        </div>
         <p>
-            <a class="font-weight-bolder" asp-action="Create">Hacé tu Consulta</a>
+            <h3><a class="font-weight-bolder" asp-action="Create">Hacé tu Consulta Aquí</a></h3>
         </p>
     </div>
-
+    
 </body>
 
 </html>

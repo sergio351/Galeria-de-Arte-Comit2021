@@ -9,10 +9,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
     <!-- Bootstrap CSS -->
+    <link href="~/css/site.css" rel="stylesheet" />
     <link href="~/css/galeriaimg.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Righteous&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap" rel="stylesheet">
+    <style>
+         .text-center #c {
+            font-family: 'Amaranth', sans-serif;
+            font-size: 50px;
+        }
+    </style>
 </head>
 <!-- Titulo
 
@@ -121,7 +132,7 @@
 </html>
 <!--Galeria -->
 <div class="text-center">
-    <h2>NUESTRA GALERIA</h2>
+    <h2 id="c">NUESTRA GALERIA</h2>
 </div>
 <section id="gallery">
     <div class="container ">
@@ -138,13 +149,14 @@
                         {
                             <img id="imagenArtista" style="width:350px;height:350px; object-fit:cover" src="">
                         }
-                        <div class="card-body">
-                            <h5 class="card-title"> @item.Nombre </h5>
-                            <h4 class="precio">$@item.Precio</h4>
-                            <p class="card-text">  @item.Obra</p>
-                            <a asp-action="Create" asp-controller="Contactos" class="btn btn-outline-success btn-sm" >Consultar</a>
+                    <div class="card-body">
+                        <h5 class="card-title">Artista: @item.Nombre </h5>
+                        <h5 class="card-text">Obra:  @item.Obra</h5>
+                        <h4 class="precio">Precio:$@item.Precio</h4>
 
-                        </div>
+                        <a asp-action="Create" asp-controller="Contactos" class="btn btn-danger btn-sm">Consultar</a>
+
+                    </div>
                     </div>
                 </div>
             }
@@ -152,9 +164,19 @@
         </div>
     </div>
 </section>
+<!--ENVIOS-->
 <div class="text-center">
-    <h2>FORMAS DE ENVIO</h2>
+    <h2 id="c">FORMAS DE ENVÍO</h2>
+    <img id="envio" src="~/img/istockphoto-637864518-612x612.jpg" alt=""/>
+    <h3 class="text-info">Envíos a domicilio a traves de Oca, hacemos envíos a toda ciudad de Mar del Plata y algunas localidades de la Provincia de Buenos Aires.<a asp-action="Create" asp-controller="Contactos"> Ponete en contacto con nosotros!</a> </h3>
 </div>
+<!--COMPRAR-->
 <div class="text-center">
-    <h3 class="text-info">Envíos a domicilio a traves de Oca, hacemos envíos a toda ciudad de Mar del Plata y algunas localidades de la Provincia de Buenos Aires. Ponete en contacto con nosotros!</h3>
+    <h2 id="c">COMO COMPRAR</h2>
+    <img id="envio" src="~/img/comprar/comprar-seguridad-online.webp" alt="" />
+    <h3 class="text-info">
+        *Seleccioná el producto que queres comprar y hacé click en el botón Consultar.<br />
+        *Y a la brevedad te damos una devolución.
+
+    </h3>
 </div>

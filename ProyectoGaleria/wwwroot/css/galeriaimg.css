@@ -1,21 +1,18 @@
-﻿* {
-    background-color: red;
-}   
+﻿
 #galeria col-lg-4 {
     margin: 0;
     padding: 25px;
-    
-    
-    }
+   
+}
 
     #galeria img {
     width: 100%;
     height: 250px;
+    
     }
 
     #galeria img:hover {
-        border: 5px solid #e5e5e5;
-        
+        border: 5px solid #e5e5e5;       
     }
 
     #container{
@@ -31,17 +28,18 @@
     }
     .carousel-inner img{
         height:300px;
+     
     }
     .header.nav {
         width: 100%;
     }
     #bienvenidos{
-        font-size:50px;
+        font-size:55px;
         font-family:'MingLiU_HKSCS-ExtB';
        
     }
     #bienvenidos2{
-        font-size:25px;
+        font-size:45px;
     }
 
     #fuentenav {
@@ -49,12 +47,34 @@
         font-weight:bold;
         
     }
-#header{
-    color:red;
+    #header{
+    
     font-size:large;
     
-}
+    }
 .navbar-nav.li {
     float: none;
     display: inline-block;
+  
+}
+nav li a:hover {
+    background: tomato;
+    color: white;
+}
+body {
+    margin: 80px 50px 75px 100px;
+    background-color:yellowgreen;
+}
+.text-center #envio {
+    height:200px;
+    width:300px;   
+}
+section .card-body {
+    background-color: #FFC433;
+}
+.card #imagenArtista {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+    
 }

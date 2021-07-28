@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoGaleria.Controllers
 {
-    [Authorize]
+    [Authorize(Roles="Administrador")]
     public class ArtistasController : Controller
     {
 

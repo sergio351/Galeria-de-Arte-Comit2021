@@ -5,43 +5,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Listas de Obras</h1>
+<h1>
+    Listas de Obras
+    <img src="~/img/logo.png" alt="" width="45" height="40">
+</h1>
 
 
-<table class="table">
-    <thead>
-        <tr>
 
-            <th>
-                @Html.DisplayNameFor(model => model.Obra)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Tipo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Precio)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-
-    <tbody>
-        @foreach (var item in Model)
-        {
-        <tr>
-
-            <td>
-                @item.Obra
-            </td>
-            <td>
-               @item.Tipo
-            </td>
-            <td>
-                @item.Precio
-            </td>
-
-        </tr>
-            
-        }
-        </tbody>
-</table>

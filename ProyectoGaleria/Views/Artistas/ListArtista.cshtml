@@ -4,7 +4,11 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Lista de Artistas</h1>
+<link href="~/css/galeriaimg.css" rel="stylesheet">
+<h1>
+    Lista de Artistas
+    <img src="~/img/logo.png" alt="" width="45" height="40">
+</h1>
 
 <section id="gallery">
     <div class="container">
@@ -21,7 +25,7 @@
                         {
 
                             <img style="border-radius: 50%; width: 250px ;height:250px ;" id="imagenArtista" src="data:image/*;base64,@(Convert.ToBase64String(item.ImgPerfil))">
-                            <a name="filtroObra" asp-action="ListObra" asp-route-id="@item.Id"   asp-controller="Artistas" class="list-group-item list-group-item-action list-group-item-dark"> @item.Apellido</a>
+                            <h4><a name="filtroObra" asp-action="ListObra" asp-route-id="@item.Id" asp-controller="Artistas" class="list-group-item list-group-item-action list-group-item-dark"> @item.Apellido</a></h4>
                         }
                         else
                         {
